@@ -1,0 +1,27 @@
+{
+  "name": "OP Ubuntu Dev Container 4Core-16GB",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb"
+  },
+  "postCreateCommand": "bash /workspaces/C99/.devcontainer/setup.sh",
+  "remoteUser": "root",
+  "mounts": [
+    {
+      "source": "${localWorkspaceFolder}",
+      "target": "/workspaces/C99",
+      "type": "bind"
+    }
+  ]
+}
